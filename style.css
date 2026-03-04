@@ -4,7 +4,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Baloo 2", sans-serif;
   margin: 0;
   color: white;
   display: flex;
@@ -171,3 +171,4 @@ footer {
   }
 
 }
+
