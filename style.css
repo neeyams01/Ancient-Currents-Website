@@ -1,6 +1,6 @@
 /* --- General Page Setup --- */
 body {
-  background-image: url('Images/Background.jpg');
+  background-image: url('Background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -169,4 +169,5 @@ footer {
   .solo-box p {
     font-size: 12px;
   }
+
 }
