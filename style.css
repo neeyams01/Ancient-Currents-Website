@@ -137,6 +137,12 @@ footer {
 /* --- Responsive Adjustments --- */
 
 @media screen and (max-width: 768px) {
+
+  body{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
   
   /* 1. Header: Scale down the font so it doesn't wrap weirdly */
   header h1 {
@@ -191,4 +197,5 @@ footer {
   }
 
 }
+
 
