@@ -136,66 +136,99 @@ footer {
 
 /* --- Responsive Adjustments --- */
 
+/* --- Mobile Specifics (Tablets and Phones) --- */
 @media screen and (max-width: 768px) {
-
-  body{
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  }
   
-  /* 1. Header: Scale down the font so it doesn't wrap weirdly */
+  /* 1. The Layout "Glue" */
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Exactly the height of the screen */
+    margin: 0;
+    overflow: hidden; /* Prevents the "bounce" or scrolling */
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* 'fixed' causes zoom bugs on iOS/Android */
+  }
+
+  /* 2. Header: Slimming down vertical gaps */
+  header {
+    padding: 10px 0; /* Reduced padding */
+    flex-shrink: 0;  /* Prevents header from squishing */
+  }
+
   header h1 {
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+    font-size: 1.6rem;
+    margin: 5px 0;   /* Removes default huge top/bottom margins */
+    letter-spacing: 1px;
   }
 
   header img {
-    width: 250px;
-    height: 100px;
+    width: 200px;    /* Slightly smaller for more room */
+    height: auto;
   }
 
-  /* 2. Nav: Stack buttons vertically if they don't fit side-by-side */
+  /* 3. Nav: Tighter button stack */
   nav ul {
     flex-direction: column; 
-    gap: 15px;
+    gap: 8px;        /* Tighter gap to save vertical space */
+    margin: 5px 0;
+    padding: 0;
   }
 
   nav a {
-    font-size: 16px;
+    font-size: 15px;
+    padding: 5px 0;
   }
 
-  /* 3. Content: Make sure the box doesn't hit the edges of the phone */
+  /* 4. Content Area: The "Flex" hero */
   .content-area {
-    padding: 20px;
+    flex: 1;         /* Takes up ALL remaining space between header and footer */
+    display: flex;
+    align-items: center;    /* Centers the box vertically */
+    justify-content: center; /* Centers the box horizontally */
+    padding: 10px;          /* Minimal padding to prevent hitting edges */
+    overflow: hidden;
   }
 
   .solo-box {
-    width: 90%; /* Box takes up most of the screen width */
-    max-width: none;
+    width: 90%;
+    max-height: 80%; /* Prevents box from getting too tall */
+    padding: 15px;
+    margin: 0;
+    overflow-y: auto; /* If text is too long, it scrolls INSIDE the box only */
+    box-sizing: border-box;
   }
 
-  /* 4. Footer: Shrink icons slightly so they don't feel huge on mobile */
+  /* 5. Footer: Locked to the bottom */
   footer {
-    padding: 15px 0;
+    padding: 10px 0;
+    flex-shrink: 0;  /* Prevents footer from squishing */
+    margin-top: auto;
   }
 
   .social-links a {
-    font-size: 28px;
-    margin: 0 15px;
+    font-size: 24px; /* Slightly smaller icons */
+    margin: 0 10px;
   }
 }
 
-/* --- Small Phone Specifics (iPhone SE / small Androids) --- */
+/* --- Tiny Phones (iPhone SE etc.) --- */
 @media screen and (max-width: 480px) {
   header h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
-  .solo-box p {
-    font-size: 12px;
+  header img {
+    width: 150px;
   }
 
+  .solo-box p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
 }
+}
+
 
 
