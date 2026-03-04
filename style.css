@@ -45,15 +45,35 @@ nav ul li {
 }
 
 nav a {
-  font-size: 25px; /* Smaller as requested */
-  color: white;
+  font-size: 20px;              /* Slightly smaller but cleaner */
+  font-weight: 600;             /* Stronger visual presence */
+  letter-spacing: 2px;          /* Improves readability on busy background */
+  color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
-  transition: 0.3s;
+  position: relative;           /* Needed for underline animation */
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8); /* Helps against textured bg */
+  transition: color 0.3s ease;
+}
+
+/* Modern underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #5cc8ff;          /* Match your logo blue */
+  transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: #000dff;
+  color: #5cc8ff;               /* Subtle interaction feedback */
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* --- Featured Image (Boxy Solo Image) --- */
