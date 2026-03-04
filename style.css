@@ -1,0 +1,172 @@
+/* --- General Page Setup --- */
+body {
+  background-image: url('Images/Background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Source Code Pro', monospace;
+  margin: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures footer stays at the bottom */
+}
+
+/* --- Header at the Top --- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+header img {
+  width: 400px;
+  height: 150px;
+  margin-right: 15px;
+}
+
+/* --- Navigation Right Below Header --- */
+nav {
+  text-align: center;
+  padding: 15px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav a {
+  font-size: 25px; /* Smaller as requested */
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #000dff;
+}
+
+/* --- Featured Image (Boxy Solo Image) --- */
+.content-area {
+  flex-grow: 1; /* Pushes footer down */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.solo-box {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  text-align: center;
+  max-width: 500px;
+}
+
+.solo-box img {
+  width: 100%; /* Makes image fill the box */
+  display: block;
+}
+
+.solo-box p {
+  margin-top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+footer {
+  bottom: 0;         /* Sticks it to the very bottom */
+  left: 0;
+  width: 100%;       /* Spans the full width of the screen */
+  padding: 30px 0;   /* Gives it some breathing room from the bottom edge */
+  text-align: center;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8)); /* Fades the background for readability */
+  z-index: 1000;     /* Ensures it stays on top of other elements */
+}
+
+.social-links a {
+  color: white;
+  font-size: 35px;   /* Large, easy-to-click icons */
+  margin: 0 25px;    /* Spacing between the icons */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover Effects */
+.social-links a:hover {
+  transform: translateY(-5px); /* Lift effect */
+}
+
+/* Brand-specific colors on hover */
+.social-links a:hover .fa-facebook { color: #1877F2; }
+.social-links a:hover .fa-instagram { color: #E4405F; }
+.social-links a:hover .fa-spotify { color: #1DB954; }
+
+/* --- Responsive Adjustments --- */
+
+@media screen and (max-width: 768px) {
+  
+  /* 1. Header: Scale down the font so it doesn't wrap weirdly */
+  header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  header img {
+    width: 250px;
+    height: 100px;
+  }
+
+  /* 2. Nav: Stack buttons vertically if they don't fit side-by-side */
+  nav ul {
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  /* 3. Content: Make sure the box doesn't hit the edges of the phone */
+  .content-area {
+    padding: 20px;
+  }
+
+  .solo-box {
+    width: 90%; /* Box takes up most of the screen width */
+    max-width: none;
+  }
+
+  /* 4. Footer: Shrink icons slightly so they don't feel huge on mobile */
+  footer {
+    padding: 15px 0;
+  }
+
+  .social-links a {
+    font-size: 28px;
+    margin: 0 15px;
+  }
+}
+
+/* --- Small Phone Specifics (iPhone SE / small Androids) --- */
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .solo-box p {
+    font-size: 12px;
+  }
+}
