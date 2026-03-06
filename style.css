@@ -142,6 +142,10 @@ footer {
   /* 1. The Layout "Glue" */
   @media screen and (max-width: 768px) {
   body {
+    background-image: url('new background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
     display: flex;
     flex-direction: column;
     min-height: 100dvh; /* Dynamic height for mobile browsers */
@@ -227,6 +231,7 @@ footer {
   }
 }
 }
+
 
 
 
