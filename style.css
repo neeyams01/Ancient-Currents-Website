@@ -78,7 +78,7 @@ nav a:hover::after {
 
 /* --- Featured Image (Boxy Solo Image) --- */
 .content-area {
-  flex-grow: 1; /* Pushes footer down */
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,6 +229,7 @@ footer {
   }
 }
 }
+
 
 
 
