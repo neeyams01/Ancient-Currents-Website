@@ -140,17 +140,28 @@ footer {
 @media screen and (max-width: 768px) {
   
   /* 1. The Layout "Glue" */
+  @media screen and (max-width: 768px) {
   body {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Exactly the height of the screen */
+    min-height: 100dvh; /* Dynamic height for mobile browsers */
     margin: 0;
-    overflow: hidden; /* Prevents the "bounce" or scrolling */
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll; /* 'fixed' causes zoom bugs on iOS/Android */
+    overflow-y: auto;   /* Allow vertical movement if content overflows */
+    overflow-x: hidden; 
   }
 
+  .content-area {
+    flex: 1 0 auto;     /* Ensures it takes up space but doesn't shrink below content size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer {
+    flex-shrink: 0;
+    margin-top: auto;   /* The magic 'spring' that sticks it to the bottom */
+  }
+}
   /* 2. Header: Slimming down vertical gaps */
   header {
     padding: 10px 0; /* Reduced padding */
@@ -182,14 +193,7 @@ footer {
   }
 
   /* 4. Content Area: The "Flex" hero */
-  .content-area {
-    flex: 1;         /* Takes up ALL remaining space between header and footer */
-    display: flex;
-    align-items: center;    /* Centers the box vertically */
-    justify-content: center; /* Centers the box horizontally */
-    padding: 10px;          /* Minimal padding to prevent hitting edges */
-    overflow: hidden;
-  }
+ 
 
   .solo-box {
     width: 90%;
@@ -200,12 +204,6 @@ footer {
     box-sizing: border-box;
   }
 
-  /* 5. Footer: Locked to the bottom */
-  footer {
-    padding: 10px 0;
-    flex-shrink: 0;  /* Prevents footer from squishing */
-    margin-top: auto;
-  }
 
   .social-links a {
     font-size: 24px; /* Slightly smaller icons */
@@ -229,6 +227,7 @@ footer {
   }
 }
 }
+
 
 
 
