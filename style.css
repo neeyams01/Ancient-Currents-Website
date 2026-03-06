@@ -1,6 +1,6 @@
 /* --- General Page Setup --- */
 body {
-  background-image: url('Background.jpg');
+  background-image: url('new background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -229,6 +229,7 @@ footer {
   }
 }
 }
+
 
 
 
