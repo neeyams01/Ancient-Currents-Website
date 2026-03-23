@@ -217,6 +217,13 @@ footer {
   transform: translateY(-5px);
 }
 
+.social-links a:hover .fa-facebook { color: #1877F2; }
+.social-links a:hover .fa-instagram { color: #E4405F; }
+.social-links a:hover .fa-spotify { color: #1DB954; }
+.social-links a:hover .fa-youtube { color: #E4405F; }
+
+}
+
 /* --- Responsive Fixes --- */
 /* --- Responsive Fixes --- */
 @media screen and (max-width: 768px) {
