@@ -1,35 +1,46 @@
-/* --- General Page Setup --- */
+/* --- Global Reset & Sticky Footer Setup --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-image: url('new background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
   font-family: "Baloo 2", sans-serif;
-  margin: 0;
   color: white;
+  
+  /* Flexbox magic to glue footer to bottom */
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures footer stays at the bottom */
+  min-height: 100vh; 
+  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
 }
 
-/* --- Header at the Top --- */
+/* --- Header --- */
 header {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  flex-shrink: 0; /* Prevents header from squishing */
 }
 
 header img {
   width: 400px;
-  height: 150px;
-  margin-right: 15px;
+  max-width: 80%; /* Ensures it doesn't overflow on small screens */
+  height: auto;
 }
 
-/* --- Navigation Right Below Header --- */
+/* --- Navigation --- */
 nav {
   text-align: center;
   padding: 15px 0;
+  flex-shrink: 0;
 }
 
 nav ul {
@@ -45,18 +56,17 @@ nav ul li {
 }
 
 nav a {
-  font-size: 20px;              /* Slightly smaller but cleaner */
-  font-weight: 600;             /* Stronger visual presence */
-  letter-spacing: 2px;          /* Improves readability on busy background */
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
-  position: relative;           /* Needed for underline animation */
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8); /* Helps against textured bg */
+  position: relative;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
   transition: color 0.3s ease;
 }
 
-/* Modern underline animation */
 nav a::after {
   content: "";
   position: absolute;
@@ -64,21 +74,21 @@ nav a::after {
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background: #5cc8ff;          /* Match your logo blue */
+  background: #5cc8ff;
   transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: #5cc8ff;               /* Subtle interaction feedback */
+  color: #5cc8ff;
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-/* --- Featured Image (Boxy Solo Image) --- */
+/* --- Main Content Area (The "Stretcher") --- */
 .content-area {
-  
+  flex: 1 0 auto; /* This pushes the footer down by taking up all available space */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,114 +101,86 @@ nav a:hover::after {
   border: 2px solid rgb(0, 0, 0);
   text-align: center;
   max-width: 500px;
+  width: 100%;
 }
 
 .solo-box img {
-  width: 100%; /* Makes image fill the box */
+  width: 100%;
   display: block;
 }
 
 .solo-box p {
-  margin-top: 10px;
+  margin-top: 15px;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-
+/* --- Footer --- */
 footer {
-  bottom: 0;         /* Sticks it to the very bottom */
-  left: 0;
-  width: 100%;       /* Spans the full width of the screen */
-  padding: 30px 0;   /* Gives it some breathing room from the bottom edge */
+  flex-shrink: 0; /* Ensures footer maintains its size */
+  width: 100%;
+  padding: 40px 0;
   text-align: center;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8)); /* Fades the background for readability */
-  z-index: 1000;     /* Ensures it stays on top of other elements */
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
 }
 
 .social-links a {
   color: white;
-  font-size: 35px;   /* Large, easy-to-click icons */
-  margin: 0 25px;    /* Spacing between the icons */
+  font-size: 35px;
+  margin: 0 25px;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
 }
 
-/* Hover Effects */
 .social-links a:hover {
-  transform: translateY(-5px); /* Lift effect */
+  transform: translateY(-5px);
 }
 
-/* Brand-specific colors on hover */
 .social-links a:hover .fa-facebook { color: #1877F2; }
 .social-links a:hover .fa-instagram { color: #E4405F; }
 .social-links a:hover .fa-spotify { color: #1DB954; }
 
 /* --- Responsive Adjustments --- */
 
-/* --- Mobile Specifics (Tablets and Phones) --- */
 @media screen and (max-width: 768px) {
-  
-  body {
-    /* Ensure the body takes up at least the full height of the screen */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-    min-height: 100dvh; /* Better for mobile browsers with address bars */
-    margin: 0;
-  }
-
-  /* This pushes the footer to the bottom */
-  .content-area {
-    flex: 1 0 auto; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px; /* Reduced padding for mobile */
-  }
-
-  footer {
-    flex-shrink: 0;
-    width: 100%;
-    padding: 20px 0;
-    background: rgba(0, 0, 0, 0.8); /* Solidify background for visibility */
-  }
-
-  /* Header adjustments */
-  header {
-    padding: 10px 0;
-  }
-
   header img {
-    width: 200px;
-    height: auto;
+    width: 250px;
   }
 
-  /* Nav adjustments */
-  nav ul {
-    flex-direction: row; /* Usually looks better in a row unless you have many links */
-    flex-wrap: wrap;
-    gap: 15px;
+  nav ul li {
+    margin: 0 10px;
   }
 
   nav a {
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  .content-area {
+    padding: 20px;
   }
 
   .solo-box {
-    width: 90%;
-    max-width: 350px;
-    margin-bottom: 20px; /* Space between box and footer */
+    max-width: 90%;
   }
 
   .social-links a {
-    font-size: 28px;
+    font-size: 30px;
     margin: 0 15px;
   }
 }
 
+@media screen and (max-width: 480px) {
+  header img {
+    width: 200px;
+  }
 
+  .solo-box p {
+    font-size: 14px;
+  }
 
-
-
-
+  footer {
+    padding: 20px 0;
+  }
+}
