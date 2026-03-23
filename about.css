@@ -217,14 +217,49 @@ footer {
   transform: translateY(-5px);
 }
 
-/* --- Responsive --- */
+/* --- Responsive Fixes --- */
 @media screen and (max-width: 768px) {
+  /* 1. Bigger Header Image */
+  header img { 
+    width: 320px; /* Increased from 250px */
+    max-width: 95%; /* Ensures it doesn't clip on very small phones */
+  }
+
+  /* 2. Pyramid Text Adjustments */
   .left-slope, .right-slope { display: none; }
   .pyramid-container p { 
     text-align: center; 
     text-align-last: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Slightly larger for readability */
+    padding: 0 10px;
   }
-  .member-grid { grid-template-columns: 1fr; }
-  header img { width: 250px; }
+
+  /* 3. Making the Member Box "Bigger" */
+  .about-wrapper {
+    width: 95%; /* Uses more of the screen width */
+    gap: 60px;   /* Tighter gap for mobile flow */
+  }
+
+  .member-grid { 
+    grid-template-columns: 1fr; /* Keep them stacked */
+  }
+
+  .member-item {
+    padding: 50px 20px; /* More vertical padding makes the box feel "huge" and tall */
+    border-bottom: 1px solid #222; /* Adds definition between stacked members */
+  }
+
+  .member-item .name {
+    font-size: 1.8rem; /* Larger names for a "rock star" presence */
+    letter-spacing: 1px;
+  }
+
+  .member-item .role {
+    font-size: 0.9rem; /* Larger labels */
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 2.8rem; /* Slightly larger title */
+  }
 }
