@@ -218,48 +218,93 @@ footer {
 }
 
 /* --- Responsive Fixes --- */
+/* --- Responsive Fixes --- */
 @media screen and (max-width: 768px) {
-  /* 1. Bigger Header Image */
-  header img { 
-    width: 320px; /* Increased from 250px */
-    max-width: 95%; /* Ensures it doesn't clip on very small phones */
+  /* 1. BREAK THE VIEWPORT LOCK 
+     This allows the body to grow and the user to scroll down */
+  html, body {
+    height: auto; 
+    min-height: 100%;
+    overflow-x: hidden;
   }
 
-  /* 2. Pyramid Text Adjustments */
+  body {
+    display: block; /* Switches from flex to standard block flow */
+  }
+
+  /* 2. Header Adjustments */
+  header {
+    padding: 30px 10px;
+  }
+
+  header img { 
+    width: 320px;
+    max-width: 95%;
+  }
+
+  /* 3. Navigation - Stacked for better mobile tapping */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  /* 4. Content Area - Remove flex centering to allow natural scrolling */
+  .content-area {
+    display: block; 
+    padding: 20px 10px;
+    min-height: auto;
+  }
+
+  .about-wrapper {
+    width: 100%; 
+    gap: 40px;   /* Adjusted gap for better vertical flow */
+  }
+
+  /* 5. Pyramid Text Adjustments */
   .left-slope, .right-slope { display: none; }
   .pyramid-container p { 
     text-align: center; 
     text-align-last: center;
-    font-size: 1.2rem; /* Slightly larger for readability */
-    padding: 0 10px;
+    font-size: 1.2rem;
+    padding: 0 15px;
+    line-height: 1.6;
   }
 
-  /* 3. Making the Member Box "Bigger" */
-  .about-wrapper {
-    width: 95%; /* Uses more of the screen width */
-    gap: 60px;   /* Tighter gap for mobile flow */
-  }
-
+  /* 6. Member Vault - Making it feel "Huge" */
   .member-grid { 
-    grid-template-columns: 1fr; /* Keep them stacked */
+    grid-template-columns: 1fr; /* Stack members vertically */
   }
 
   .member-item {
-    padding: 50px 20px; /* More vertical padding makes the box feel "huge" and tall */
-    border-bottom: 1px solid #222; /* Adds definition between stacked members */
+    padding: 60px 20px; /* Tall padding creates that big, scrollable feel */
+    border-bottom: 1px solid #222;
   }
 
   .member-item .name {
-    font-size: 1.8rem; /* Larger names for a "rock star" presence */
-    letter-spacing: 1px;
+    font-size: 2rem; /* Big, bold names */
+    letter-spacing: 2px;
   }
 
   .member-item .role {
-    font-size: 0.9rem; /* Larger labels */
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 12px;
   }
 
   .section-title {
-    font-size: 2.8rem; /* Slightly larger title */
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  /* 7. Footer - Stays at the bottom of the content scroll */
+  footer {
+    position: relative;
+    padding: 60px 0;
+    background: rgba(0,0,0,0.9);
   }
 }
