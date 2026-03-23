@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background-image: url('new background.jpg');
+  background-image: url('newbackground.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
