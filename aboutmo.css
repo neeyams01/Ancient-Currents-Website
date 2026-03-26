@@ -1,1 +1,88 @@
 
+/* --- MOBILE OPTIMIZATIONS --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Header & Nav Adjustments */
+    header img {
+        width: 280px; /* Slimmer logo for mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items */
+        gap: 15px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    /* 2. Pyramid Text Fix */
+    /* We remove the slopes because there isn't enough width to wrap text on mobile */
+    .left-slope, .right-slope {
+        display: none; 
+    }
+
+    .pyramid-container p {
+        font-size: 1.1rem;
+        text-align: center;
+        text-align-last: center;
+        padding: 0 10px;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    /* 3. The Member Grid (Uniform Thin Slices) */
+    .member-grid {
+        /* We keep them in a row if you want that "Uniform Lineup" look, 
+           OR switch to column if you want them stacked. 
+           Let's stack them for better visibility on phones: */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 30px auto;
+    }
+
+    .member-item {
+        width: 180px; /* Keep them thin/slice-styled */
+        flex: none;   /* Stop them from stretching */
+        aspect-ratio: 2 / 3; /* Slightly wider than desktop to see the faces better on small screens */
+    }
+
+    /* 4. Overlay Visibility */
+    /* Since there is no hover on mobile, we show the names automatically */
+    .overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent 50%);
+        padding-bottom: 15px;
+    }
+
+    .name {
+        font-size: 1.1rem;
+    }
+
+    .role {
+        font-size: 0.75rem;
+    }
+
+    /* 5. Footer & Socials */
+    .social-links a {
+        font-size: 28px;
+        margin: 0 15px;
+    }
+    
+    .about-wrapper {
+        gap: 50px; /* Reduce spacing between sections on mobile */
+    }
+}
+
+/* --- Extra Tiny Screen Fix (iPhone SE, etc) --- */
+@media screen and (max-width: 380px) {
+    .member-item {
+        width: 150px;
+        aspect-ratio: 1 / 2; /* Make them very thin slices again for small phones */
+    }
+}
