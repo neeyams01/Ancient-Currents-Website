@@ -60,12 +60,20 @@
     }
 
     .member-item {
-        width: 180px;         /* Keeps the "Thin Slice" look */
-        max-width: 100%;
-        flex: none;           /* Prevents stretching */
-        aspect-ratio: 4  / 5;  /* Slightly shorter for mobile */
-        background-size: cover;
+        width: 220px;            /* Slightly wider than before */
+        aspect-ratio: 4 / 5;     /* A more natural 'Portrait' shape (less skinny) */
+        
+        /* This is the secret: 'contain' shows the whole photo, 
+           but 'cover' with a better ratio stops the zoom */
+        background-size: cover;  
+        
+        /* Focus on the top-center where the face usually is */
+        background-position: center 10%; 
+        
+        flex: none;
+        margin-bottom: 20px;     /* Space between the stacked photos */
     }
+}
 
     /* 4. Overlay Visibility & Text */
     .overlay {
