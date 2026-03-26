@@ -34,7 +34,7 @@
     flex: none;
     
     /* 1. THE FIX: 'contain' keeps the photo in its original 'normal' proportions */
-    background-size: contain; 
+    background-size: cover; 
     
     /* 2. Prevents the image from repeating if the box is taller than the photo */
     background-repeat: no-repeat;
