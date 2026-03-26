@@ -1,99 +1,71 @@
-/* --- COMPLETE MOBILE OVERHAUL (Index) --- */
+/* --- MOBILE OPTIMIZATIONS (INDEX) --- */
 @media screen and (max-width: 768px) {
     
-    /* 1. Body & Background */
-    body {
-        background-position: 30% center; /* Shifts background to show more texture on narrow screens */
+    /* 1. Header & Logo (Matches About Us exactly) */
+    header { padding: 20px; }
+    header img { width: 250px; }
+
+    /* 2. Nav Adjustments */
+    nav ul { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    nav ul li { margin: 0; }
+    nav a { font-size: 18px; }
+
+    /* 3. The Content Area "The Solo Box" */
+    .content-area {
         display: flex;
         flex-direction: column;
-        overflow-x: hidden;
-    }
-
-    /* 2. Header & Logo (Matches About Us) */
-    header {
-        padding: 30px 0 10px 0;
-    }
-
-    header img {
-        width: 250px; /* Consistent branding */
-        filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-    }
-
-    /* 3. Navigation - Clean Stack */
-    nav {
-        padding: 10px 0 30px 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-        color: #5cc8ff; /* Theme color for mobile visibility */
-    }
-
-    /* 4. THE MAIN EVENT: "Out Now" Section */
-    .content-area {
-        padding: 0; /* Remove side padding so the box can breathe */
-        margin-bottom: 40px;
+        align-items: center;
+        padding: 40px 20px;
     }
 
     .solo-box {
-        background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
-        max-width: 100%;
-        width: 100%;
-        border-left: none;
-        border-right: none;
-        border-top: 2px solid rgba(92, 200, 255, 0.5);
-        border-bottom: 2px solid rgba(92, 200, 255, 0.5);
-        padding: 0 0 20px 0; /* Image touches the edges, text has padding below */
-        box-shadow: 0 0 30px rgba(0,0,0,0.8);
+        /* Matches the 'Member Item' style: slender but centered */
+        width: 280px;            /* Wider than a member slice, but not full-screen */
+        max-width: 90%;
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;      /* Matches member-item radius */
+        overflow: hidden;
+        padding: 0;              /* Let the image hit the edges */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .solo-box img {
         width: 100%;
         height: auto;
-        /* Subtle zoom effect to make it feel "Big" */
-        transform: scale(1.02); 
+        display: block;
+        /* Matches the containment feel of your other page */
+        object-fit: contain; 
     }
 
+    /* 4. Text Styling (Matches .name and .role vibes) */
     .solo-box p {
-        font-size: 1.4rem;
-        padding: 20px 15px 10px 15px;
+        font-size: 1.1rem;      /* Matches .name size */
+        padding: 20px 10px;
         margin: 0;
-        color: #fff;
-        text-shadow: 0 0 10px #5cc8ff; /* Neon glow effect */
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+        text-transform: uppercase;
         letter-spacing: 2px;
-        font-family: "Bubblegum Sans", cursive; /* Using your other font for flair */
+        color: #5cc8ff;         /* Brand blue for the "Out Now" pop */
     }
 
     /* 5. Footer & Socials */
     footer {
-        margin-top: auto;
         padding: 40px 0;
-        background: linear-gradient(transparent, #000);
-    }
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 25px;
     }
 
     .social-links a {
-        font-size: 32px;
-        margin: 0;
-        /* Makes icons easier to tap on mobile */
-        padding: 10px; 
+        font-size: 30px;
+        margin: 0 15px;
     }
 }
 
-/* Fix for extra small screens (iPhone SE) */
+/* Fix for iPhone SE / Small screens */
 @media screen and (max-width: 380px) {
     header img { width: 200px; }
-    .solo-box p { font-size: 1.1rem; }
+    .solo-box { width: 220px; }
+    .solo-box p { font-size: 0.9rem; }
 }
