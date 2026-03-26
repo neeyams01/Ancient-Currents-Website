@@ -29,23 +29,23 @@
     }
 
    .member-item {
-    width: 180px;            /* Keep it a thin slice */
-    aspect-ratio: 1 / 2;     /* Tall vertical shape */
+    width: 140px;            /* Narrows the box to match the original slice width */
+    aspect-ratio: 1 / 2.2;   /* Makes it tall and skinny */
     flex: none;
     
-    /* 1. This ensures the whole slice fits the box */
-    background-size: 100% 100%; 
+    /* 1. 'cover' keeps the photo proportions 'Normal' (no stretching) */
+    background-size: cover; 
     
-    /* 2. THE KEY: 'center 80%' moves the "camera" down toward the chin/chest, 
-       which pushes the face UP into the middle of the frame. 
-       Adjust this number (70%, 80%, 90%) until the eyes are centered. */
+    /* 2. This pushes the image around so the face is centered.
+       Adjust the 80% if you still see too much forehead. */
     background-position: center 80%; 
     
     background-repeat: no-repeat;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Space between them when stacked */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
     .overlay {
