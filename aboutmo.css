@@ -1,10 +1,9 @@
-
 /* --- MOBILE OPTIMIZATIONS --- */
 @media screen and (max-width: 768px) {
     
     /* 1. Header & Nav Adjustments */
     header img {
-        width: 280px; /* Slimmer logo for mobile */
+        width: 250px; /* Slimmer logo for mobile */
     }
 
     nav ul {
@@ -17,16 +16,14 @@
     }
 
     /* 2. Pyramid Text Fix */
-    /* We remove the slopes because there isn't enough width to wrap text on mobile */
     .left-slope, .right-slope {
-        display: none; 
+        display: none; /* Floats don't work well on narrow screens */
     }
-
+    
     .pyramid-container p {
         font-size: 1.1rem;
         text-align: center;
-        text-align-last: center;
-        padding: 0 10px;
+        padding: 0 15px;
         line-height: 1.6;
     }
 
@@ -37,26 +34,23 @@
 
     /* 3. The Member Grid (Uniform Thin Slices) */
     .member-grid {
-        /* We keep them in a row if you want that "Uniform Lineup" look, 
-           OR switch to column if you want them stacked. 
-           Let's stack them for better visibility on phones: */
-        flex-direction: column;
+        flex-direction: column; /* Stack them so they are visible */
         align-items: center;
         gap: 20px;
         margin: 30px auto;
     }
 
     .member-item {
-        width: 180px; /* Keep them thin/slice-styled */
-        flex: none;   /* Stop them from stretching */
-        aspect-ratio: 2 / 3; /* Slightly wider than desktop to see the faces better on small screens */
+        width: 180px;         /* Keeps the "Thin Slice" look */
+        max-width: 100%;
+        flex: none;           /* Prevents stretching */
+        aspect-ratio: 1 / 2;  /* Slightly shorter for mobile */
     }
 
-    /* 4. Overlay Visibility */
-    /* Since there is no hover on mobile, we show the names automatically */
+    /* 4. Overlay Visibility & Text */
     .overlay {
-        opacity: 1;
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent 50%);
+        opacity: 1; /* Show names always on mobile */
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
         padding-bottom: 15px;
     }
 
@@ -75,14 +69,15 @@
     }
     
     .about-wrapper {
-        gap: 50px; /* Reduce spacing between sections on mobile */
+        gap: 50px; /* Reduce spacing between sections */
     }
-}
+} /* <--- This bracket closes the 768px media query correctly */
+
 
 /* --- Extra Tiny Screen Fix (iPhone SE, etc) --- */
 @media screen and (max-width: 380px) {
     .member-item {
         width: 150px;
-        aspect-ratio: 1 / 2; /* Make them very thin slices again for small phones */
+        aspect-ratio: 1 / 2; 
     }
 }
