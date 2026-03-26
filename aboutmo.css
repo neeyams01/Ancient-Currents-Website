@@ -29,8 +29,8 @@
     }
 
    .member-item {
-    width: 140px;            /* Narrows the box to match your 'slice' shape */
-    aspect-ratio: 1 / 2.5;   /* Makes the container tall and thin */
+    width: 160px;            /* Narrows the box to match your 'slice' shape */
+    aspect-ratio: 1 / 1.5;   /* Makes the container tall and thin */
     flex: none;
     
     /* 1. THE FIX: 'contain' keeps the photo in its original 'normal' proportions */
@@ -40,10 +40,10 @@
     background-repeat: no-repeat;
     
     /* 3. This centers the photo and pushes it to the top/bottom as needed */
-    background-position: center center; 
+    background-position: center 15%; 
     
     background-color: transparent; /* Ensures no weird background colors show */
-    border-radius: 4px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
     margin-bottom: 30px;
