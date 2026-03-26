@@ -143,59 +143,62 @@ nav a:hover::after {
 }
 
 /* --- MEMBER VAULT --- */
-.member-vault {
-  background: rgba(0,0,0,0.9);
-  border: 1px solid #333;
-  border-top: 5px solid #5cc8ff;
-}
-
-.vault-header {
-  background: #111;
-  padding: 15px;
-  text-align: center;
-  color: #5cc8ff;
-  font-weight: 800;
-  letter-spacing: 4px;
-  border-bottom: 1px solid #222;
-}
-
-.member-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: #222;
-}
-
+/* 2. THE CARD - The 'Thin Slice' Shape */
 .member-item {
-  background: #000;
-  padding: 40px 20px;
-  text-align: center;
-  transition: 0.3s;
+    position: relative;
+    flex: 1; /* Everyone gets equal 'thin' width */
+    
+    /* 1 / 3 creates a very tall, narrow portrait (like your photo) */
+    /* If they look too tall, try 2 / 3 */
+    aspect-ratio: 1 / 3; 
+    
+    background-size: cover;    /* Fills the thin box */
+    background-position: center; /* Keeps the face centered */
+    background-repeat: no-repeat;
+    
+    border-radius: 4px; /* Slight round to match the rock aesthetic */
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.4s ease;
 }
 
+/* 3. YOUR NAMED CARDS */
+.jeff    { background-image: url('jeff.jpg'); }
+.ross    { background-image: url('ross.jpg'); }
+.stephen { background-image: url('stephen.jpg'); }
+.gordon  { background-image: url('gordon.jpg'); }
+
+/* 4. HOVER EFFECT (Subtle Grow) */
 .member-item:hover {
-  background: #080808;
+    transform: scale(1.03);
+    z-index: 10; /* Brings the hovered one to the front */
+    border-color: #ffcc00;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
-.role {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: #666;
-  margin-bottom: 5px;
-  letter-spacing: 1.5px;
+/* --- Names/Roles Overlay --- */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 5%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.name {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #fff;
+.member-item:hover .overlay {
+    opacity: 1;
 }
 
-.member-item:hover .role {
-  color: #5cc8ff;
-}
+.name { color: white; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; }
+.role { color: #ffcc00; font-size: 0.9rem; letter-spacing: 1px; }
+
+
+
 /* --- Footer --- */
 footer {
   flex-shrink: 0; /* Ensures footer maintains its size */
@@ -224,94 +227,3 @@ footer {
 .social-links a:hover .fa-youtube { color: #E4405F; }
 
 
-/* --- Responsive Fixes --- */
-/* --- Responsive Fixes --- */
-@media screen and (max-width: 768px) {
-  /* 1. BREAK THE VIEWPORT LOCK 
-     This allows the body to grow and the user to scroll down */
-  html, body {
-    height: auto; 
-    min-height: 100%;
-    overflow-x: hidden;
-  }
-
-  body {
-    display: block; /* Switches from flex to standard block flow */
-  }
-
-  /* 2. Header Adjustments */
-  header {
-    padding: 30px 10px;
-  }
-
-  header img { 
-    width: 320px;
-    max-width: 95%;
-  }
-
-  /* 3. Navigation - Stacked for better mobile tapping */
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  nav ul li {
-    margin: 5px 0;
-  }
-
-  /* 4. Content Area - Remove flex centering to allow natural scrolling */
-  .content-area {
-    display: block; 
-    padding: 20px 10px;
-    min-height: auto;
-  }
-
-  .about-wrapper {
-    width: 100%; 
-    gap: 40px;   /* Adjusted gap for better vertical flow */
-  }
-
-  /* 5. Pyramid Text Adjustments */
-  .left-slope, .right-slope { display: none; }
-  .pyramid-container p { 
-    text-align: center; 
-    text-align-last: center;
-    font-size: 1.2rem;
-    padding: 0 15px;
-    line-height: 1.6;
-  }
-
-  /* 6. Member Vault - Making it feel "Huge" */
-  .member-grid { 
-    grid-template-columns: 1fr; /* Stack members vertically */
-  }
-
-  .member-item {
-    padding: 60px 20px; /* Tall padding creates that big, scrollable feel */
-    border-bottom: 1px solid #222;
-  }
-
-  .member-item .name {
-    font-size: 2rem; /* Big, bold names */
-    letter-spacing: 2px;
-  }
-
-  .member-item .role {
-    font-size: 1rem;
-    margin-bottom: 12px;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-  }
-
-  /* 7. Footer - Stays at the bottom of the content scroll */
-  footer {
-    position: relative;
-    padding: 60px 0;
-    background: rgba(0,0,0,0.9);
-  }
-}
