@@ -169,25 +169,17 @@ nav a:hover::after {
 
 /* Update your existing .member-item to play nice with the grid */
 .member-item {
-    width: 140px;            /* Narrows the box to match your 'slice' shape */
-    aspect-ratio: 1 / 2.5;   /* Makes the container tall and thin */
-    flex: none;
-    
-    /* 1. THE FIX: 'contain' keeps the photo in its original 'normal' proportions */
-    background-size: contain; 
-    
-    /* 2. Prevents the image from repeating if the box is taller than the photo */
+    position: relative;
+    flex: 1; 
+    max-width: 250px;       /* ADD THIS: Prevents them from getting too wide */
+    aspect-ratio: 1 / 3;    
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
-    
-    /* 3. This centers the photo and pushes it to the top/bottom as needed */
-    background-position: center center; 
-    
-    background-color: transparent; /* Ensures no weird background colors show */
     border-radius: 4px;
     overflow: hidden;
-    position: relative;
-    margin-bottom: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.4s ease;
 }
 
 /* 3. YOUR NAMED CARDS */
