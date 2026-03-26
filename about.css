@@ -144,29 +144,28 @@ nav a:hover::after {
 
 /* --- MEMBER VAULT --- */
 /* 2. THE CARD - The 'Thin Slice' Shape */
-
-
 .member-grid {
-    display: flex;            /* This makes the items sit side-by-side */
-    flex-direction: row;      /* Ensures they stay in a line */
-    justify-content: center;  /* Centers the whole group */
-    gap: 15px;                /* Creates the space between the slices */
-    width: 100%;
-    max-width: 1100px;        /* Keeps the slices from getting too fat on big screens */
-    margin: 0 auto;           /* Centers the container */
+    display: flex;             /* Activates side-by-side mode */
+    flex-direction: row;       /* Forces them into a horizontal line */
+    justify-content: center;   /* Centers the group on the screen */
+    gap: 10px;                 /* Space between the slices */
+    width: 95%;
+    max-width: 1000px;         /* Prevents them from getting too wide */
+    margin: 40px auto;         /* Centers the container on the page */
 }
 
+/* Update your existing .member-item to play nice with the grid */
 .member-item {
     position: relative;
-    flex: 1;
-    aspect-ratio: 1 / 3;    
-    background-size: cover; 
+    flex: 1;                   /* Makes all slices equal width */
+    max-width: 200px;          /* Forces them to stay "THIN" */
+    aspect-ratio: 1 / 3;       /* Matches your "Uniform Slice" look */
+    
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.4s ease;
 }
 
 /* 3. YOUR NAMED CARDS */
