@@ -1,111 +1,63 @@
 /* --- MOBILE OPTIMIZATIONS --- */
 @media screen and (max-width: 768px) {
     
-    /* 1. Header & Nav Adjustments */
-    header img {
-        width: 250px; /* Slimmer logo for mobile */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack menu items */
-        gap: 15px;
-    }
-
-    nav ul li {
-        margin: 0;
-    }
-
-    /* 2. Pyramid Text Fix */
-    .left-slope, .right-slope {
-        display: none; /* Floats don't work well on narrow screens */
-    }
+    header img { width: 250px; }
+    nav ul { flex-direction: column; gap: 15px; }
+    .left-slope, .right-slope { display: none; }
     
-    .pyramid-container p {
-        font-size: 1.1rem;
-        text-align: center;
-        padding: 0 15px;
-        line-height: 1.6;
+    .member-vault {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
     }
 
-    .section-title {
-        font-size: 2rem;
-        letter-spacing: 3px;
-    }
-
-    /* 3. The Member Grid (Uniform Thin Slices) */
-
-    @media screen and (max-width: 768px) {
     .vault-header {
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        width: 100%;
         font-size: 1.8rem;
         gap: 10px;
+        margin-bottom: 20px;
     }
 
-    .member-vault {
+    .member-grid {
         display: flex;
         flex-direction: column;
-        align-items: center; /* This pulls the whole grid to the center */
-    }
-}
-    
-    .member-grid {
-        flex-direction: column; /* Stack them so they are visible */
         align-items: center;
         gap: 20px;
-        margin: 30px auto;
+        width: 100%;
     }
 
     .member-item {
-        width: 220px;            /* Slightly wider than before */
-        aspect-ratio: 4 / 5;     /* A more natural 'Portrait' shape (less skinny) */
-        
-        /* This is the secret: 'contain' shows the whole photo, 
-           but 'cover' with a better ratio stops the zoom */
-        background-size: cover;  
-        
-        /* Focus on the top-center where the face usually is */
-        background-position: center 10%; 
-        
+        width: 200px;         /* Fixed width for the slice */
+        aspect-ratio: 1 / 2;  /* Keeps the 'tall slice' look */
         flex: none;
-        margin-bottom: 20px;     /* Space between the stacked photos */
+        
+        /* THE FIX: This forces the whole skinny photo to fit the box */
+        background-size: 100% 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
     }
+
+    .overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .name { font-size: 1.1rem; }
+    .role { font-size: 0.8rem; }
 }
 
-    /* 4. Overlay Visibility & Text */
-    .overlay {
-        opacity: 1; /* Show names always on mobile */
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
-        padding-bottom: 15px;
-    }
-
-    .name {
-        font-size: 1.1rem;
-    }
-
-    .role {
-        font-size: 0.75rem;
-    }
-
-    /* 5. Footer & Socials */
-    .social-links a {
-        font-size: 28px;
-        margin: 0 15px;
-    }
-    
-    .about-wrapper {
-        gap: 50px; /* Reduce spacing between sections */
-    }
-} /* <--- This bracket closes the 768px media query correctly */
-
-
-/* --- Extra Tiny Screen Fix (iPhone SE, etc) --- */
+/* Fix for iPhone SE / Small screens */
 @media screen and (max-width: 380px) {
     .member-item {
-        width: 150px;
-        aspect-ratio: 1 / 2; 
+        width: 160px;
+        aspect-ratio: 1 / 2;
     }
 }
