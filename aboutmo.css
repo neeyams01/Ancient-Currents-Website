@@ -28,21 +28,18 @@
         width: 100%;
     }
 
-   .member-item {
-    width: 160px;            
-    aspect-ratio: 1 / 1.5;   
+    .member-item {
+
+    width: 160px;            /* Narrows the box to match your 'slice' shape */
+    aspect-ratio: 1 / 1.5;   /* Makes the container tall and thin */
     flex: none;
-    
-    /* 1. THE STRETCH: This forces the image to fill the width and height 
-       exactly, regardless of the original photo's shape. No more gaps! */
-    background-size: 100% 100%; 
-    
-    /* 2. Since 100% 100% forces the whole image into the box, 
-       'center center' is usually best to keep it balanced. */
-    background-position: center center; 
-    
+    /* 1. THE FIX: 'contain' keeps the photo in its original 'normal' proportions */
+    background-size: contain; 
+    /* 2. Prevents the image from repeating if the box is taller than the photo */
     background-repeat: no-repeat;
-    background-color: transparent; 
+    /* 3. This centers the photo and pushes it to the top/bottom as needed */
+    background-position: center 15%; 
+    background-color: transparent; /* Ensures no weird background colors show */
     border-radius: 8px;
     overflow: hidden;
     position: relative;
