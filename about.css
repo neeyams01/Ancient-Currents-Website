@@ -144,6 +144,19 @@ nav a:hover::after {
 
 /* --- MEMBER VAULT --- */
 /* 2. THE CARD - The 'Thin Slice' Shape */
+
+.member-vault {
+    text-align: center; /* Centers "THE LINEUP" text and bolts */
+    margin-top: 50px;
+}
+
+.vault-header {
+    font-size: 2rem;
+    color: #5cc8ff;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+}
+
 .member-grid {
     display: flex;             /* Activates side-by-side mode */
     flex-direction: row;       /* Forces them into a horizontal line */
