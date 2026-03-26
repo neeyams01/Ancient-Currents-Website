@@ -1,0 +1,99 @@
+/* --- COMPLETE MOBILE OVERHAUL (Index) --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Body & Background */
+    body {
+        background-position: 30% center; /* Shifts background to show more texture on narrow screens */
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    /* 2. Header & Logo (Matches About Us) */
+    header {
+        padding: 30px 0 10px 0;
+    }
+
+    header img {
+        width: 250px; /* Consistent branding */
+        filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+    }
+
+    /* 3. Navigation - Clean Stack */
+    nav {
+        padding: 10px 0 30px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+        color: #5cc8ff; /* Theme color for mobile visibility */
+    }
+
+    /* 4. THE MAIN EVENT: "Out Now" Section */
+    .content-area {
+        padding: 0; /* Remove side padding so the box can breathe */
+        margin-bottom: 40px;
+    }
+
+    .solo-box {
+        background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+        max-width: 100%;
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-top: 2px solid rgba(92, 200, 255, 0.5);
+        border-bottom: 2px solid rgba(92, 200, 255, 0.5);
+        padding: 0 0 20px 0; /* Image touches the edges, text has padding below */
+        box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    }
+
+    .solo-box img {
+        width: 100%;
+        height: auto;
+        /* Subtle zoom effect to make it feel "Big" */
+        transform: scale(1.02); 
+    }
+
+    .solo-box p {
+        font-size: 1.4rem;
+        padding: 20px 15px 10px 15px;
+        margin: 0;
+        color: #fff;
+        text-shadow: 0 0 10px #5cc8ff; /* Neon glow effect */
+        letter-spacing: 2px;
+        font-family: "Bubblegum Sans", cursive; /* Using your other font for flair */
+    }
+
+    /* 5. Footer & Socials */
+    footer {
+        margin-top: auto;
+        padding: 40px 0;
+        background: linear-gradient(transparent, #000);
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .social-links a {
+        font-size: 32px;
+        margin: 0;
+        /* Makes icons easier to tap on mobile */
+        padding: 10px; 
+    }
+}
+
+/* Fix for extra small screens (iPhone SE) */
+@media screen and (max-width: 380px) {
+    header img { width: 200px; }
+    .solo-box p { font-size: 1.1rem; }
+}
