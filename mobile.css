@@ -27,9 +27,9 @@
         max-width: 90%;
         background: rgba(0, 0, 0, 0.8);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;      /* Matches member-item radius */
+        border-radius: 5px;      /* Matches member-item radius */
         overflow: hidden;
-        padding: 0;              /* Let the image hit the edges */
+        padding: 1;              /* Let the image hit the edges */
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
@@ -44,7 +44,7 @@
     /* 4. Text Styling (Matches .name and .role vibes) */
     .solo-box p {
         font-size: 1.1rem;      /* Matches .name size */
-        padding: 20px 10px;
+        padding: 10px 10px;
         margin: 0;
         background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
         text-transform: uppercase;
