@@ -28,20 +28,25 @@
         width: 100%;
     }
 
-    .member-item {
-        width: 200px;         /* Fixed width for the slice */
-        aspect-ratio: 1 / 2;  /* Keeps the 'tall slice' look */
-        flex: none;
-        
-        /* THE FIX: This forces the whole skinny photo to fit the box */
-        background-size: 100% 100%; 
-        background-position: center;
-        background-repeat: no-repeat;
-        
-        border-radius: 4px;
-        overflow: hidden;
-        position: relative;
-    }
+   .member-item {
+    width: 180px;            /* Keep it a thin slice */
+    aspect-ratio: 1 / 2;     /* Tall vertical shape */
+    flex: none;
+    
+    /* 1. This ensures the whole slice fits the box */
+    background-size: 100% 100%; 
+    
+    /* 2. THE KEY: 'center 80%' moves the "camera" down toward the chin/chest, 
+       which pushes the face UP into the middle of the frame. 
+       Adjust this number (70%, 80%, 90%) until the eyes are centered. */
+    background-position: center 80%; 
+    
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
 
     .overlay {
         opacity: 1;
