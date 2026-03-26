@@ -33,6 +33,25 @@
     }
 
     /* 3. The Member Grid (Uniform Thin Slices) */
+
+    @media screen and (max-width: 768px) {
+    .vault-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        font-size: 1.8rem;
+        gap: 10px;
+    }
+
+    .member-vault {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This pulls the whole grid to the center */
+    }
+}
+    
     .member-grid {
         flex-direction: column; /* Stack them so they are visible */
         align-items: center;
@@ -44,7 +63,8 @@
         width: 180px;         /* Keeps the "Thin Slice" look */
         max-width: 100%;
         flex: none;           /* Prevents stretching */
-        aspect-ratio: 1 / 2;  /* Slightly shorter for mobile */
+        aspect-ratio: 4  / 5;  /* Slightly shorter for mobile */
+        background-size: cover;
     }
 
     /* 4. Overlay Visibility & Text */
