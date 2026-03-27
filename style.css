@@ -141,7 +141,7 @@ nav a:hover::after {
 }
 
 .player-btn {
-    background: #5cc8ff;
+    background: white;
     color: #000;
     border: none;
     padding: 12px 30px;
