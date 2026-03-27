@@ -96,69 +96,87 @@ nav a:hover::after {
 }
 
 /* THE UNIT WRAPPER: Keeps box and player stacked */
-.main-feature-container {
+/* --- MAIN FEATURE SECTION --- */
+
+/* 1. The Content Area - The "Stage" */
+.content-area {
     display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 100%;
-    max-width: 500px; /* Limits the width for desktop */
+    flex-direction: column; /* FORCES STACKING */
+    align-items: center;    /* CENTERS EVERYTHING */
+    justify-content: center;
+    padding: 60px 20px;
+    flex: 1 0 auto;
 }
 
-/* TOP PART: Image and Text */
-.solo-box {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    border: 2px solid #000;
-    text-align: center;
+/* 2. The Container - Limits the width for Desktop */
+.main-feature-container {
     width: 100%;
+    max-width: 500px; /* How big you want the box on desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. The Solo Box (Top Part) */
+.solo-box {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none; /* Connects to player */
+    border-radius: 12px 12px 0 0;
+    padding: 20px;
     box-sizing: border-box;
-    border-radius: 12px 12px 0 0; /* Rounds only the top */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .solo-box img {
     width: 100%;
+    height: auto;
     display: block;
     border-radius: 4px;
 }
 
 .solo-box p {
-    margin: 15px 0 5px 0;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-top: 15px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-/* BOTTOM PART: Audio Player */
+/* 4. The Audio Player (Bottom Part) */
 .audio-player {
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
-    border: 2px solid #000;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
-    padding: 20px 0;
-    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle divider */
+    padding: 25px 0;
+    border-radius: 0 0 12px 12px;
     box-sizing: border-box;
-    border-radius: 0 0 12px 12px; /* Rounds only the bottom */
+    text-align: center;
 }
 
 .player-btn {
-    background: white;
+    background: #5cc8ff;
     color: #000;
     border: none;
-    padding: 12px 30px;
+    padding: 12px 35px;
     border-radius: 50px;
     font-weight: 800;
+    font-size: 1rem;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    transition: all 0.3s ease;
 }
 
 .player-btn:hover {
-    background: #fff;
-    box-shadow: 0 0 20px #5cc8ff;
+    background: #ffffff;
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(92, 200, 255, 0.5);
 }
 
 /* --- Footer --- */
