@@ -1,25 +1,39 @@
-/* --- BIG CITY STARS PLAYER LOGIC --- */
-const music = document.getElementById('bg-music');
-const btnText = document.querySelector('.music-btn .text');
+/* --- ANCIENT CURRENTS PLAYER LOGIC --- */
 
-function toggleMusic() {
-    if (music.paused) {
-        // We use a promise check because 'Big City Stars.mp3' might take 
-        // a second to load on mobile data.
-        music.play()
-            .then(() => {
-                btnText.innerText = "PAUSE THEME";
-            })
-            .catch(err => {
-                console.log("Playback blocked. tap the screen again.");
-            });
-    } else {
-        music.pause();
-        btnText.innerText = "PLAY THEME";
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('main-track');
+    const playBtn = document.getElementById('play-pause');
+    const icon = playBtn.querySelector('i');
+
+    /**
+     * Logic to toggle play/pause
+     */
+    function toggleMusic() {
+        if (music.paused) {
+            music.play()
+                .then(() => {
+                    // Update icon to pause state
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                })
+                .catch(error => {
+                    console.error("Playback failed. Ensure 'Big City Stars.mp3' is in the root folder.", error);
+                });
+        } else {
+            music.pause();
+            // Update icon back to play state
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+        }
     }
-}
 
-// Ensure the button resets if the music ever stops
-music.onended = function() {
-    btnText.innerText = "PLAY THEME";
-};
+    // Attach click listener to the button
+    playBtn.addEventListener('click', toggleMusic);
+
+    // Reset button icon if the song reaches the end
+    music.onended = () => {
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+    };
+});
