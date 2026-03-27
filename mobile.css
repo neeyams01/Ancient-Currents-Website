@@ -45,7 +45,8 @@
   
     
     .main-feature-container {
-        max-width: 280px;    /* Matches your 'Member Slice' width */
+        width: 95%;
+        max-width: 280px;    
         margin-top: 20px;
     }
 
@@ -58,6 +59,8 @@
     /* --- Force Spotify Player to fit on Mobile --- */
 .audio-player {
     display: block !important;
+    max-width: 100%
+        box-sizing: border-box;
     width: 100% !important;
     height: 152px !important; /* Matches the compact player height */
     padding: 0 !important;
