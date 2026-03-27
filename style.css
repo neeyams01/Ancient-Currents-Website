@@ -88,12 +88,13 @@ nav a:hover::after {
 
 /* --- Main Content Area (The "Stretcher") --- */
 .content-area {
-  flex: 1 0 auto; /* This pushes the footer down by taking up all available space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; 
+    padding: 40px 20px;
 }
+
 
 .solo-box {
   background: rgba(0, 0, 0, 0.8);
@@ -116,35 +117,48 @@ nav a:hover::after {
   letter-spacing: 1px;
 }
 
-/* --- Audio Player Styling --- */
+.main-feature-container {
+    display: flex;
+    flex-direction: column; /* Forces vertical stacking */
+    align-items: center;    /* Centers both the box and the button */
+    gap: 0;                 /* Set to 0 if you want them touching, or 20px for a gap */
+    width: 100%;
+    max-width: 500px;       /* Matches your solo-box width */
+}
+
+/* Adjust the content area to center the new container */
+
+/* Ensure the player matches the width of the box above it */
 .audio-player {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 0 0 8px 8px; /* Rounds only the bottom corners */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+    padding: 20px 0;
     text-align: center;
+    border-radius: 0 0 12px 12px; /* Rounds only the BOTTOM corners */
+    box-sizing: border-box;
 }
 
 .player-btn {
-    background: #5cc8ff; 
+    background: #5cc8ff;
     color: #000;
     border: none;
     padding: 12px 30px;
     border-radius: 50px;
-    font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
-/* Hover effects only really matter on Desktop */
 .player-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 20px #5cc8ff;
     transform: scale(1.05);
-    background: #ffffff;
-    box-shadow: 0 0 20px rgba(92, 200, 255, 0.6);
 }
 
 /* --- Footer --- */
