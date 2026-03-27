@@ -36,6 +36,32 @@ header img {
   height: auto;
 }
 
+/* --- Article Headline (Transparent Black) --- */
+.article-headline {
+    background-color: rgba(0, 0, 0, 0.5); /* Light black transparency */
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.article-headline a {
+    color: #5cc8ff; /* Using your blue accent color */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.article-headline a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(92, 200, 255, 0.8);
+}
+
 /* --- Navigation --- */
 nav {
   text-align: center;
