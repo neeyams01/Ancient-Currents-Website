@@ -1,37 +1,41 @@
-/* --- ANCIENT CURRENTS PLAYER LOGIC --- */
+/* --- ANCIENT CURRENTS: OFFICIAL PLAYER LOGIC --- */
 
-// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     const music = document.getElementById('main-track');
     const playBtn = document.getElementById('play-pause');
     const icon = playBtn.querySelector('i');
 
-    /**
-     * Logic to toggle play/pause
-     */
+    // GitHub Pages can be slow; this ensures the metadata is ready
+    music.load();
+
     function toggleMusic() {
+        // Log to console so you can see if the button is responding on mobile
+        console.log("Toggle clicked. Current state: " + (music.paused ? "Paused" : "Playing"));
+
         if (music.paused) {
+            // Promise-based play for mobile compatibility
             music.play()
                 .then(() => {
-                    // Update icon to pause state
                     icon.classList.remove('fa-play');
                     icon.classList.add('fa-pause');
+                    console.log("Playback started successfully.");
                 })
                 .catch(error => {
-                    console.error("Playback failed. Ensure 'Big City Stars.mp3' is in the root folder.", error);
+                    console.error("Playback failed:", error);
+                    // If this pops up, the file path 'outnow.mp3' is wrong on GitHub
+                    alert("Audio Error: Check if 'outnow.mp3' is in your main GitHub folder.");
                 });
         } else {
             music.pause();
-            // Update icon back to play state
             icon.classList.remove('fa-pause');
             icon.classList.add('fa-play');
         }
     }
 
-    // Attach click listener to the button
+    // Attach the listener to your HTML button ID
     playBtn.addEventListener('click', toggleMusic);
 
-    // Reset button icon if the song reaches the end
+    // Auto-reset icon if the song ends
     music.onended = () => {
         icon.classList.remove('fa-pause');
         icon.classList.add('fa-play');
