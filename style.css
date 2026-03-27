@@ -86,8 +86,8 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* --- Main Content Area (The "Stretcher") --- */
 .content-area {
+    flex: 1 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,49 +95,49 @@ nav a:hover::after {
     padding: 40px 20px;
 }
 
+/* THE UNIT WRAPPER: Keeps box and player stacked */
+.main-feature-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Limits the width for desktop */
+}
 
+/* TOP PART: Image and Text */
 .solo-box {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  border: 2px solid rgb(0, 0, 0);
-  text-align: center;
-  max-width: 500px;
-  width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border: 2px solid #000;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px 12px 0 0; /* Rounds only the top */
 }
 
 .solo-box img {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
+    border-radius: 4px;
 }
 
 .solo-box p {
-  margin-top: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    margin: 15px 0 5px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.main-feature-container {
-    display: flex;
-    flex-direction: column; /* Forces vertical stacking */
-    align-items: center;    /* Centers both the box and the button */
-    gap: 0;                 /* Set to 0 if you want them touching, or 20px for a gap */
-    width: 100%;
-    max-width: 500px;       /* Matches your solo-box width */
-}
-
-/* Adjust the content area to center the new container */
-
-/* Ensure the player matches the width of the box above it */
+/* BOTTOM PART: Audio Player */
 .audio-player {
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #000;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
     padding: 20px 0;
     text-align: center;
-    border-radius: 0 0 12px 12px; /* Rounds only the BOTTOM corners */
     box-sizing: border-box;
+    border-radius: 0 0 12px 12px; /* Rounds only the bottom */
 }
 
 .player-btn {
