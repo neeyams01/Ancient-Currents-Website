@@ -116,6 +116,37 @@ nav a:hover::after {
   letter-spacing: 1px;
 }
 
+/* --- Audio Player Styling --- */
+.audio-player {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 8px 8px; /* Rounds only the bottom corners */
+    text-align: center;
+}
+
+.player-btn {
+    background: #5cc8ff; 
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Hover effects only really matter on Desktop */
+.player-btn:hover {
+    transform: scale(1.05);
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(92, 200, 255, 0.6);
+}
+
 /* --- Footer --- */
 footer {
   flex-shrink: 0; /* Ensures footer maintains its size */
