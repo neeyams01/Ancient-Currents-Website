@@ -149,26 +149,21 @@ nav a:hover::after {
 /* --- UPDATED AUDIO PLAYER FOR SPOTIFY --- */
 .audio-player {
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Remove the old 25px padding so the iframe can fill the space */
-    padding: 0; 
-    border-radius: 0 0 12px 12px;
-    box-sizing: border-box;
-    text-align: center;
-    /* Ensure the iframe doesn't poke out of the rounded corners */
-    overflow: hidden; 
-    /* This height matches the 'compact' Spotify player */
-    min-height: 152px; 
-    display: flex;
+    /* We remove the background and border because Spotify brings its own */
+    background: transparent; 
+    border: none;
+    padding: 0 !important;   /* This is critical to prevent the "squish" */
+    margin: 0;
+    line-height: 0;          /* Removes tiny gaps at the bottom */
+    overflow: hidden;
+    min-height: 152px;       /* Match the iframe height */
 }
 
+/* This ensures the iframe fills the container perfectly */
 .audio-player iframe {
-    width: 100%;
-    height: 152px; /* Standard compact height */
-    border: none;
     display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .player-btn {
