@@ -48,7 +48,7 @@ header img {
 }
 
 .article-headline a {
-    color: #5cc8ff; /* Using your blue accent color */
+    color: white; 
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
