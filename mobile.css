@@ -52,6 +52,24 @@
         color: white;         /* Brand blue for the "Out Now" pop */
     }
 
+    /* --- Mobile Player Adjustments --- */
+    .audio-player {
+        padding: 15px 10px;
+    }
+
+    .player-btn {
+        width: 90%;          /* Makes the button a nice big target for thumbs */
+        justify-content: center; /* Centers the icon and text inside the button */
+        font-size: 0.9rem;   /* Slightly smaller text to keep it on one line */
+        padding: 15px 0;     /* Thicker button for easier tapping */
+    }
+    
+    /* Disable hover scale on mobile to prevent "sticky" hover states */
+    .player-btn:hover {
+        transform: none;
+    }
+}
+
     /* 5. Footer & Socials */
     footer {
         padding: 40px 0;
