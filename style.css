@@ -86,16 +86,6 @@ nav a:hover::after {
   width: 100%;
 }
 
-.content-area {
-    flex: 1 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh; 
-    padding: 40px 20px;
-}
-
-/* THE UNIT WRAPPER: Keeps box and player stacked */
 /* --- MAIN FEATURE SECTION --- */
 
 /* 1. The Content Area - The "Stage" */
@@ -145,47 +135,26 @@ nav a:hover::after {
     text-transform: uppercase;
 }
 
-/* 4. The Audio Player (Bottom Part) */
-/* --- UPDATED AUDIO PLAYER FOR SPOTIFY --- */
+/* 4. The Audio Player (Bottom Part) - UPDATED FOR SPOTIFY */
 .audio-player {
     width: 100%;
-    /* We remove the background and border because Spotify brings its own */
-    background: transparent; 
-    border: none;
-    padding: 0 !important;   /* This is critical to prevent the "squish" */
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none; /* Connects seamlessly to the solo-box above */
+    padding: 0 !important;   /* Critical: removes internal spacing for the iframe */
     margin: 0;
-    line-height: 0;          /* Removes tiny gaps at the bottom */
+    line-height: 0;          /* Removes tiny white gaps at the bottom */
     overflow: hidden;
-    min-height: 152px;       /* Match the iframe height */
+    border-radius: 0 0 12px 12px;
+    min-height: 152px;       /* Matches the compact Spotify player height */
 }
 
-/* This ensures the iframe fills the container perfectly */
+/* Ensures the iframe fills the container perfectly */
 .audio-player iframe {
+    width: 100%;
+    height: 152px;
     display: block;
-    margin: 0;
-    padding: 0;
-}
-
-.player-btn {
-    background: white;
-    color: #000;
     border: none;
-    padding: 12px 35px;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 1rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-}
-
-.player-btn:hover {
-    background: #ffffff;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(92, 200, 255, 0.5);
 }
 
 /* --- Footer --- */
@@ -214,4 +183,3 @@ footer {
 .social-links a:hover .fa-instagram { color: #E4405F; }
 .social-links a:hover .fa-spotify { color: #1DB954; }
 .social-links a:hover .fa-youtube { color: #E4405F; }
-
