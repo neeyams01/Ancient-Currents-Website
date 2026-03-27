@@ -14,6 +14,7 @@ body {
   background-position: center;
   font-family: "Baloo 2", sans-serif;
   color: white;
+  flex-direction: column;
   margin:0;
   
   /* Flexbox magic to glue footer to bottom */
