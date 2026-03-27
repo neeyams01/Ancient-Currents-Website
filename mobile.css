@@ -26,11 +26,11 @@
         width: 280px;            /* Wider than a member slice, but not full-screen */
         max-width: 90%;
         background: rgba(0, 0, 0, 0.8);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 5px;      /* Matches member-item radius */
-        overflow: hidden;
-        padding: 1;              /* Let the image hit the edges */
+        border: 1px solid rgba(255, 255, 255, 0.1);     /* Matches member-item radius */
+        overflow: hidden;            /* Let the image hit the edges */
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        padding: 10px;
+        border-radius: 8px 8px 0 0;
     }
 
     .solo-box img {
@@ -42,29 +42,32 @@
     }
 
     /* 4. Text Styling (Matches .name and .role vibes) */
-    .solo-box p {
-        font-size: 1.1rem;      /* Matches .name size */
-        padding: 10px 10px;
-        margin: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: white;         /* Brand blue for the "Out Now" pop */
+  
+    
+    .main-feature-container {
+        max-width: 280px;    /* Matches your 'Member Slice' width */
+        margin-top: 20px;
     }
 
-    /* --- Mobile Player Adjustments --- */
+
+    .solo-box p {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
     .audio-player {
-        padding: 15px 10px;
+        padding: 15px 0;
+        border-radius: 0 0 8px 8px;
     }
 
     .player-btn {
-        width: 90%;          /* Makes the button a nice big target for thumbs */
-        justify-content: center; /* Centers the icon and text inside the button */
-        font-size: 0.9rem;   /* Slightly smaller text to keep it on one line */
-        padding: 15px 0;     /* Thicker button for easier tapping */
+        width: 85%;          /* Wider button for thumbs */
+        padding: 15px 0;
+        justify-content: center;
+        font-size: 0.9rem;
     }
-    
-    /* Disable hover scale on mobile to prevent "sticky" hover states */
+
+    /* Remove hover scale for touch screens */
     .player-btn:hover {
         transform: none;
     }
