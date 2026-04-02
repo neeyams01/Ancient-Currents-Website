@@ -129,6 +129,7 @@ nav a:hover::after {
   flex-grow: 1;
     width: 100%;
     box-sizing: border-box;
+  overflow-y: auto;   /* ONLY this part scrolls if content is too long */
 }
 
 /* 2. The Container - Limits the width for Desktop */
