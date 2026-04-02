@@ -16,6 +16,7 @@ body {
   color: white;
   flex-direction: column;
   margin:0;
+  overflow-x: hidden; 
   
   /* Flexbox magic to glue footer to bottom */
   display: flex;
@@ -196,6 +197,7 @@ footer {
   padding: 40px 0;
   text-align: center;
   background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  background-color: black;
 }
 
 .social-links a {
@@ -205,6 +207,7 @@ footer {
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8));
 }
 
 .social-links a:hover {
