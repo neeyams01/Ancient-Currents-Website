@@ -1,11 +1,8 @@
-/* --- MOBILE OPTIMIZATIONS (INDEX) --- */
 @media screen and (max-width: 768px) {
     
-    /* 1. Header & Logo (Matches About Us exactly) */
     header { padding: 20px; }
     header img { width: 250px; }
 
-    /* 2. Nav Adjustments */
     nav ul { 
         flex-direction: column; 
         gap: 15px; 
@@ -13,7 +10,6 @@
     nav ul li { margin: 0; }
     nav a { font-size: 18px; }
 
-    /* 3. The Content Area "The Solo Box" */
     .content-area {
         display: flex;
         flex-direction: column;
@@ -22,12 +18,11 @@
     }
 
     .solo-box {
-        /* Matches the 'Member Item' style: slender but centered */
-        width: 280px;            /* Wider than a member slice, but not full-screen */
+        width: 280px;            
         max-width: 90%;
         background: rgba(0, 0, 0, 0.8);
-        border: 1px solid rgba(255, 255, 255, 0.1);     /* Matches member-item radius */
-        overflow: hidden;            /* Let the image hit the edges */
+        border: 1px solid rgba(255, 255, 255, 0.1);    
+        overflow: hidden;          
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         padding: 10px;
         border-radius: 8px 8px 0 0;
@@ -37,13 +32,9 @@
         width: 100%;
         height: auto;
         display: block;
-        /* Matches the containment feel of your other page */
         object-fit: contain; 
-    }
+    }  
 
-    /* 4. Text Styling (Matches .name and .role vibes) */
-  
-    
     .main-feature-container {
         width: 95%;
         max-width: 280px;    
@@ -56,13 +47,12 @@
         letter-spacing: 1px;
     }
 
-    /* --- Force Spotify Player to fit on Mobile --- */
-.audio-player {
+    .audio-player {
     display: block !important;
     max-width: 100%
         box-sizing: border-box;
     width: 100% !important;
-    height: 152px !important; /* Matches the compact player height */
+    height: 152px !important;
     padding: 0 !important;
     margin: 0 !important;
     background: rgba(0, 0, 0, 0.8) !important;
@@ -87,8 +77,6 @@
         margin: 0 15px;
     }
 }
-
-/* Fix for iPhone SE / Small screens */
 @media screen and (max-width: 380px) {
     header img { width: 200px; }
     .solo-box { width: 220px; }
