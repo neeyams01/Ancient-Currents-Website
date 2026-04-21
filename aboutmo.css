@@ -1,4 +1,3 @@
-/* --- MOBILE OPTIMIZATIONS --- */
 @media screen and (max-width: 768px) {
     
     header img { width: 250px; }
@@ -30,16 +29,13 @@
 
     .member-item {
 
-    width: 160px;            /* Narrows the box to match your 'slice' shape */
-    aspect-ratio: 1 / 1.5;   /* Makes the container tall and thin */
+    width: 160px;            
+    aspect-ratio: 1 / 1.5;   
     flex: none;
-    /* 1. THE FIX: 'contain' keeps the photo in its original 'normal' proportions */
     background-size: contain; 
-    /* 2. Prevents the image from repeating if the box is taller than the photo */
     background-repeat: no-repeat;
-    /* 3. This centers the photo and pushes it to the top/bottom as needed */
     background-position: center 15%; 
-    background-color: transparent; /* Ensures no weird background colors show */
+    background-color: transparent; 
     border-radius: 8px;
     overflow: hidden;
     position: relative;
@@ -57,7 +53,6 @@
     .role { font-size: 0.8rem; }
 }
 
-/* Fix for iPhone SE / Small screens */
 @media screen and (max-width: 380px) {
     .member-item {
         width: 160px;
