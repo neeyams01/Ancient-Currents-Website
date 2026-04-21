@@ -1,4 +1,3 @@
-/* --- Global Reset & Sticky Footer Setup --- */
 html, body {
   height: 100%;
   margin: 0;
@@ -18,31 +17,28 @@ body {
   margin:0;
   overflow-x: hidden; 
   
-  /* Flexbox magic to glue footer to bottom */
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
-  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  min-height: 100dvh; 
 }
 
-/* --- Header --- */
 header {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  flex-shrink: 0; /* Prevents header from squishing */
+  flex-shrink: 0; 
 }
 
 header img {
   width: 400px;
-  max-width: 80%; /* Ensures it doesn't overflow on small screens */
+  max-width: 80%; 
   height: auto;
 }
 
-/* --- Article Headline (Transparent Black) --- */
 .article-headline {
-    background-color: rgba(0, 0, 0, 0.5); /* Light black transparency */
+    background-color: rgba(0, 0, 0, 0.5); 
     padding: 10px 20px;
     text-align: center;
     width: 100%;
@@ -66,7 +62,6 @@ header img {
     text-shadow: 0 0 10px rgba(92, 200, 255, 0.8);
 }
 
-/* --- Navigation --- */
 nav {
   text-align: center;
   padding: 15px 0;
@@ -116,37 +111,31 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* --- MAIN FEATURE SECTION --- */
-
-/* 1. The Content Area - The "Stage" */
 .content-area {
     display: flex;
-    flex-direction: column; /* FORCES STACKING */
-    align-items: center;    /* CENTERS EVERYTHING */
+    flex-direction: column; 
+    align-items: center;    
     justify-content: center;
     padding: 60px 20px;
     flex: 1 0 auto;
   flex-grow: 1;
     width: 100%;
     box-sizing: border-box;
-  overflow-y: auto;   /* ONLY this part scrolls if content is too long */
+  overflow-y: auto;   
 }
 
-/* 2. The Container - Limits the width for Desktop */
 .main-feature-container {
     width: 100%;
-    max-width: 500px; /* How big you want the box on desktop */
+    max-width: 500px; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-/* 3. The Solo Box (Top Part) */
 .solo-box {
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: none; /* Connects to player */
+    border-bottom: none; 
     border-radius: 12px 12px 0 0;
     padding: 20px;
     box-sizing: border-box;
@@ -169,21 +158,19 @@ nav a:hover::after {
     text-transform: uppercase;
 }
 
-/* 4. The Audio Player (Bottom Part) - UPDATED FOR SPOTIFY */
 .audio-player {
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: none; /* Connects seamlessly to the solo-box above */
-    padding: 0 !important;   /* Critical: removes internal spacing for the iframe */
+    border-top: none; 
+    padding: 0 !important;   
     margin: 0;
-    line-height: 0;          /* Removes tiny white gaps at the bottom */
+    line-height: 0;          
     overflow: hidden;
     border-radius: 0 0 12px 12px;
-    min-height: 152px;       /* Matches the compact Spotify player height */
+    min-height: 152px;      
 }
 
-/* Ensures the iframe fills the container perfectly */
 .audio-player iframe {
     width: 100%;
     height: 152px;
@@ -191,9 +178,8 @@ nav a:hover::after {
     border: none;
 }
 
-/* --- Footer --- */
 footer {
-  flex-shrink: 0; /* Ensures footer maintains its size */
+  flex-shrink: 0; 
   width: 100%;
   padding: 40px 0;
   text-align: center;
